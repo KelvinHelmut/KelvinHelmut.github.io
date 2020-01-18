@@ -9,15 +9,15 @@ skills:
 images:
   [
     {
-      title: "Layout 4",
-      description: "Description text for layout 4.",
+      title: "Achievements",
+      description: "Ensamblaje de computadoras, mantenimiento de equipos, implementación de redes e instalación de sistemas operativos y aplicaciones.",
       caption: "",
       layout: "4",
       files:
         [
-          { image: ../images/empty.png },
-          { image: ../images/empty.png },
-          { image: ../images/empty.png },
+          { image: ../images/companies/common/codescreen3.jpg },
+          { image: ../images/companies/common/codescreen1.jpg },
+          { image: ../images/companies/upgrade.png },
         ],
     },
     {

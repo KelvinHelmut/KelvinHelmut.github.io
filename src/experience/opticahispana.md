@@ -11,15 +11,15 @@ skills:
 images:
   [
     {
-      title: "Layout 4",
-      description: "Description text for layout 4.",
+      title: "Achievements",
+      description: "Desarrollo e implementación de sistema informático para el control de registro de compra y venta de los productos y servicios ofrecidos.",
       caption: "",
       layout: "4",
       files:
         [
-          { image: ../images/empty.png },
-          { image: ../images/empty.png },
-          { image: ../images/empty.png },
+          { image: ../images/companies/common/codescreen3.jpg },
+          { image: ../images/companies/common/codescreen1.jpg },
+          { image: ../images/companies/opticahispana.png },
         ],
     },
     {

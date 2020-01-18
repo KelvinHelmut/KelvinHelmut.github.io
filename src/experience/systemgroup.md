@@ -15,15 +15,15 @@ skills:
 images:
   [
     {
-      title: "Layout 4",
-      description: "Description text for layout 4.",
+      title: "Achievements",
+      description: "Implementación, diseño, administración y capacitación de la tienda en línea.",
       caption: "",
       layout: "4",
       files:
         [
-          { image: ../images/empty.png },
-          { image: ../images/empty.png },
-          { image: ../images/empty.png },
+          { image: ../images/companies/common/codescreen3.jpg },
+          { image: ../images/companies/common/codescreen1.jpg },
+          { image: ../images/companies/systemgroup.png },
         ],
     },
     {

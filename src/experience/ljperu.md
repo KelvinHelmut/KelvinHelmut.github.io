@@ -13,15 +13,15 @@ skills:
 images:
   [
     {
-      title: "Layout 4",
-      description: "Description text for layout 4.",
+      title: "Achievements",
+      description: "Desarrollo de nuevas funcionalidades para sistema de información empresarial.",
       caption: "",
       layout: "4",
       files:
         [
-          { image: ../images/empty.png },
-          { image: ../images/empty.png },
-          { image: ../images/empty.png },
+          { image: ../images/companies/common/codescreen3.jpg },
+          { image: ../images/companies/common/codescreen1.jpg },
+          { image: ../images/companies/ljperu.png },
         ],
     },
     {
