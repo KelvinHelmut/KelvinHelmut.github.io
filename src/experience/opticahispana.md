@@ -1,7 +1,7 @@
 ---
 title: ""
 company: "Óptica Hispana"
-logo: ../images/empty.png
+logo: ../images/companies/opticahispana.png
 jobTitle: "Freelance Developer"
 skills:
   [

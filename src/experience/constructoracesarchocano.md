@@ -1,7 +1,7 @@
 ---
 title: ""
 company: "Constructora Cesar Chocano"
-logo: ../images/empty.png
+logo: ../images/companies/constructora.png
 jobTitle: "Freelance Developer"
 skills:
   [

@@ -1,7 +1,7 @@
 ---
 title: ""
 company: "System Group"
-logo: ../images/empty.png
+logo: ../images/companies/systemgroup.png
 jobTitle: "Freelance Developer"
 skills:
   [

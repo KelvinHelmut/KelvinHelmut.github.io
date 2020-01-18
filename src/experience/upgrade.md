@@ -1,7 +1,7 @@
 ---
 title: ""
 company: "Grupo UpGrade"
-logo: ../images/empty.png
+logo: ../images/companies/upgrade.png
 jobTitle: "Técnico"
 skills:
   [

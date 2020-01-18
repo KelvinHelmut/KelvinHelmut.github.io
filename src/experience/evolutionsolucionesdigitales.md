@@ -1,7 +1,7 @@
 ---
 title: ""
 company: "Evolution Solucion Digitales"
-logo: ../images/empty.png
+logo: ../images/companies/evolutionsolucionesdigitales.png
 jobTitle: "Full stack developer"
 skills:
   [

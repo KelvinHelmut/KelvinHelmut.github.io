@@ -1,7 +1,7 @@
 ---
 title: ""
 company: "LjPeru"
-logo: ../images/empty.png
+logo: ../images/companies/ljperu.png
 jobTitle: "Junior PHP Developer"
 skills:
   [

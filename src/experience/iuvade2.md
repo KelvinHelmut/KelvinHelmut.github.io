@@ -1,7 +1,7 @@
 ---
 title: ""
 company: "IUVADE"
-logo: ../images/empty.png
+logo: ../images/companies/iuvade.png
 jobTitle: "Full stack developer"
 skills:
   [
