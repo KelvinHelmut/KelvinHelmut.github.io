@@ -6,6 +6,7 @@ module.exports = {
         basePath: ``,
         path: `src/`,
         // imagesPath: `src/images/`,
+        iconFile: `src/images/icon.png`,
         siteTitle: `Portfolio`,
         siteUrl: `https://kelvinhelmut.github.io/`,
         siteName: `Kelvin Helmut`,
@@ -28,7 +29,7 @@ module.exports = {
           gitHub: `KelvinHelmut`,
           stackOverflow: `10947034/kelvin-helmut`,
           linkedIn: `in/kelvinhelmut/`,
-          resumeInPdf: `/CV.pdf`, // url or local link
+          resumeInPdf: `https://github.com/KelvinHelmut/CV/blob/master/CV.pdf`, // url or local link
         },
         homePage: {
           availableToHire: true,
