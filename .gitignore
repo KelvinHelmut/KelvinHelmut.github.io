@@ -1,42 +1,6 @@
-# OS X
-.DS_Store*
-Icon?
-._*
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# Linux
-.directory
-*~
-
-# npm
-node_modules/
-*.log
-*.gz
-build/
-
-# configure
-config/
-.env.development
-.env.production
-
-# log
-dump.rdb
-nohup.out
-
-# dotenv
-.env
-
-# virtualenv
-.venv/
-venv/
-ENV/
-
-# cached files
-.cache/
-
-# generated files
-public/
+.DS_Store
+/node_modules/
+/src/node_modules/@sapper/
+yarn-error.log
+/cypress/screenshots/
+/__sapper__/
