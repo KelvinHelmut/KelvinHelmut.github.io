@@ -61,3 +61,5 @@
 	</div>
 
 </div>
+
+<div class="hidden hover:text-black hover:text-blue-600 hover:text-blue-400 hover:text-blue-700 hover:text-pink-700 hover:text-red-700"></div>
