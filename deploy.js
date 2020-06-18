@@ -1,16 +1,20 @@
 const ghpages = require('gh-pages');
-console.log(ghpages)
+
 ghpages.publish(
     '__sapper__/export',
     {
         branch: 'master',
-        repo: 'KelvinHelmut.github.io.git',
+        repo: 'https://github.com/KelvinHelmut/KelvinHelmut.github.io',
         user: {
             name: 'KelvinHelmut',
             email: 'aek6.io@gmail.com'
         }
     },
-    () => {
-        console.log('Deploy Complete!')
+    (err) => {
+        if (err) {
+            console.err(result)
+        } else {
+            console.log('Deploy Complete!')
+        }
     }
 )
