@@ -11,12 +11,11 @@
     "dev:tailwindcss": "postcss static/tailwind.css -o static/main.css -w",
     "build:tailwindcss": "NODE_ENV=production postcss static/tailwind.css -o static/main.css",
     "build": "npm run build:tailwindcss && sapper build",
-    "export": "npm run build:tailwindcss && sapper export --legacy",
+    "export": "npm run build:tailwindcss && sapper export",
     "clean": "rm -rf ./__sapper__",
     "deploy": "npm run clean && npm run export && node ./deploy.js"
   },
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^2.3.0",
     "compression": "^1.7.1",
     "polka": "next",
     "sirv": "^0.4.0"
