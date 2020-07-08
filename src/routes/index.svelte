@@ -44,7 +44,7 @@
 			<div class="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
 				{#each me.socialNetworks as socialNetwork }
 					{#if socialNetwork.url }
-						<a class="link" href={socialNetwork.url} target="_blank">
+						<a class="link" href={socialNetwork.url} target="_blank" rel="noopener noreferrer">
 							<svg class="h-6 fill-current text-gray-600 hover:{socialNetwork.color}" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<title>{ socialNetwork.title }</title>
 								<path d={socialNetwork.svg}/>
