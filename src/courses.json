@@ -1,0 +1,39 @@
+[
+    {
+        "nombre": "Deep Learning with PyTorch: Zero to GANs",
+        "imagen": "images/certificados/Deeplearning pytorch.jpg",
+        "periodo": "2020\nJul 06",
+        "url": "https://jovian.ml/certificate/MFQWCNBYGQ"
+    },
+    {
+        "nombre": "Introducción a la Minería de Datos",
+        "imagen": "images/certificados/mineria de datos.png",
+        "periodo": "2020\nJun 21",
+        "url": ""
+    },
+    {
+        "nombre": "Data Science Math Skills",
+        "imagen": "images/certificados/Coursera XP73L8MVSYLE.jpg",
+        "periodo": "2020\nJun 15",
+        "url": "https://coursera.org/verify/XP73L8MVSYLE"
+    },
+    {
+        "nombre": "IA Para Todos",
+        "imagen": "images/certificados/Coursera W5Y25Q7GVVKB.jpg",
+        "periodo": "2020\nJun 03",
+        "url": "https://coursera.org/verify/W5Y25Q7GVVKB"
+    },
+    {
+        "nombre": "Machine Learning",
+        "imagen": "images/certificados/machine learning.png",
+        "periodo": "2020\nMay 05",
+        "url": ""
+    },
+    {
+        "nombre": "Cloud Computing",
+        "imagen": "images/certificados/Cloud computing.jpg",
+        "periodo": "2020\nApr 06",
+        "url": "https://LEARNDIGITAL.WITHGOOGLE.COM/ACTIVATE/validate-certificate-code",
+        "ID": "U7B G5R DZP"
+    }
+]
