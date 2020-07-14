@@ -1,1 +1,0 @@
-import{S as s,i as t,s as o,t as e,k as a,a as i,r as l,d as r}from"./client.ab63925b.js";function b(s){let t;return{c(){t=e("google-site-verification: google1272b7b102bfc6b6.html")},l(s){t=a(s,"google-site-verification: google1272b7b102bfc6b6.html")},m(s,o){i(s,t,o)},p:l,i:l,o:l,d(s){s&&r(t)}}}export default class extends s{constructor(s){super(),t(this,s,null,b,o,{})}}
