@@ -1,0 +1,16 @@
+{
+    "id": "ljperu-en",
+    "company": "LjPeru",
+    "role": "Junior PHP Developer",
+    "period": "Sep 2014 — Nov 2014",
+    "location": "Arequipa, PE",
+    "highlights": [
+        "Add and correct functionalities in different modules of business control system"
+    ],
+    "technologies": [
+        "PHP",
+        "MySql"
+    ],
+    "locale": "en",
+    "order": 8
+}

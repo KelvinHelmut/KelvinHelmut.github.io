@@ -1,0 +1,13 @@
+{
+    "id": "upgrade-en",
+    "company": "UpGrade Group",
+    "role": "Computer Technician",
+    "period": "May 2012 — Aug 2012",
+    "location": "Arequipa, PE",
+    "highlights": [
+        "Computer assembly and maintenance",
+        "Network configuration"
+    ],
+    "locale": "en",
+    "order": 10
+}

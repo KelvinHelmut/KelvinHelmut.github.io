@@ -1,0 +1,19 @@
+{
+    "id": "iuvade-2015-es",
+    "company": "IUVADE",
+    "role": "Full stack developer",
+    "period": "Feb 2015 — Nov 2016",
+    "location": "Arequipa, PE",
+    "highlights": [
+        "Implementación de nuevos módulos en sistemas de gestión de gobiernos y gestión empresarial",
+        "Programación de vistas, triggers y funciones (PlPgSql)"
+    ],
+    "technologies": [
+        "PHP",
+        "Sencha ExtJs",
+        "PostgreSql",
+        "Ubuntu Server"
+    ],
+    "locale": "es",
+    "order": 7
+}

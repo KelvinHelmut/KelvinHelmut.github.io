@@ -1,0 +1,13 @@
+{
+    "id": "upgrade-es",
+    "company": "Grupo UpGrade",
+    "role": "Técnico en computación",
+    "period": "May 2012 — Ago 2012",
+    "location": "Arequipa, PE",
+    "highlights": [
+        "Ensamblaje y mantenimiento de computadoras",
+        "Configuración de redes"
+    ],
+    "locale": "es",
+    "order": 10
+}

@@ -1,0 +1,24 @@
+{
+    "id": "chocano-es",
+    "company": "Constructora Cesar Chocano",
+    "role": "Freelance Developer",
+    "period": "Dic 2019 — May 2020",
+    "location": "Arequipa, PE",
+    "highlights": [
+        "Gestión, Diseño e implementación de sistema de gestión empresarial para construcción",
+        "Configuración de servidor Gnu/Linux en AWS Lightsail y Pipeline CI/CD",
+        "Configuración de sistema de backup automático en Cloud"
+    ],
+    "technologies": [
+        "Python",
+        "Django",
+        "Sencha ExtJs",
+        "Postgresql",
+        "GitLab CI/CD",
+        "AWS Lightsail",
+        "Nginx",
+        "Debian"
+    ],
+    "locale": "es",
+    "order": 3
+}

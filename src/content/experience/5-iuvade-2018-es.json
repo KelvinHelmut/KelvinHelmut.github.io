@@ -1,0 +1,23 @@
+{
+    "id": "iuvade-2018-es",
+    "company": "IUVADE",
+    "role": "Full stack developer",
+    "period": "Jul 2018 — Dic 2019",
+    "location": "Arequipa, PE",
+    "highlights": [
+        "Optimización de código y mejora de rendimiento de funcionalidades en sistemas de gestión de gobierno, gestión empresarial y facturación electrónica",
+        "Migración de sistemas municipales satélite a nuevas versiones (código, bases de datos y configuración de servidores GNU/Linux)",
+        "Mantenimiento y despliegue de funcionalidades a sistemas en producción"
+    ],
+    "technologies": [
+        "PHP",
+        "Sencha ExtJs",
+        "Postgresql",
+        "PostGis",
+        "GMaps",
+        "Ubuntu Server",
+        "Apache"
+    ],
+    "locale": "es",
+    "order": 5
+}

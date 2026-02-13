@@ -1,0 +1,109 @@
+---
+import { getLangFromUrl } from "../i18n/utils";
+import ParticlesBackground from "../components/ParticlesBackground";
+import ThemeToggle from "../components/ThemeToggle";
+import { Languages } from "lucide-react";
+import "../styles/global.css";
+
+interface Props {
+    title: string;
+    description?: string;
+}
+
+const { title, description } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!DOCTYPE html>
+<html lang={lang} class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <script is:inline>
+            const theme = (() => {
+                if (
+                    typeof localStorage !== "undefined" &&
+                    localStorage.getItem("theme")
+                ) {
+                    return localStorage.getItem("theme");
+                }
+                if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    return "dark";
+                }
+                return "light";
+            })();
+
+            if (theme === "dark") {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        </script>
+        <title>{title} | Kelvin Helmut</title>
+        <meta name="description" content={description} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <ParticlesBackground client:load />
+        <div
+            class="relative z-10 max-w-3xl mx-auto px-6 py-12 min-h-screen flex flex-col"
+        >
+            <header class="mb-16 flex justify-between items-center">
+                <a href={`/${lang}`} class="text-xl font-bold tracking-tight"
+                    >KH</a
+                >
+                <nav class="flex gap-4 items-center">
+                    <slot name="nav" />
+                    <div class="h-4 w-[1px] bg-zinc-200 dark:bg-zinc-800 mx-1">
+                    </div>
+                    <ThemeToggle client:load />
+                    <a
+                        href={lang === "es"
+                            ? `/en${Astro.url.pathname.replace("/es", "")}`
+                            : `/es${Astro.url.pathname.replace("/en", "")}`}
+                        class="flex items-center gap-1.5 p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 text-sm font-bold text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                        title={lang === "es"
+                            ? "Switch to English"
+                            : "Cambiar a Español"}
+                    >
+                        <Languages size={18} />
+                        <span class="text-[10px]"
+                            >{lang === "es" ? "EN" : "ES"}</span
+                        >
+                    </a>
+                </nav>
+            </header>
+
+            <main class="flex-grow">
+                <slot />
+            </main>
+
+            <footer
+                class="mt-24 pt-8 border-t border-zinc-100 dark:border-zinc-900 text-sm text-zinc-500 flex justify-between"
+            >
+                <span>&copy; {new Date().getFullYear()} Kelvin Helmut</span>
+                <div class="flex gap-4">
+                    <a
+                        href="https://github.com/KelvinHelmut"
+                        target="_blank"
+                        class="hover:text-zinc-900 dark:hover:text-zinc-100 italic transition-colors"
+                        >GitHub</a
+                    >
+                    <a
+                        href="https://linkedin.com/in/kelvinhelmut"
+                        target="_blank"
+                        class="hover:text-zinc-900 dark:hover:text-zinc-100 italic transition-colors"
+                        >LinkedIn</a
+                    >
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

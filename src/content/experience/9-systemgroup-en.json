@@ -1,0 +1,20 @@
+{
+    "id": "systemgroup-en",
+    "company": "SystemGroup, Optica Hispana",
+    "role": "Freelance Developer",
+    "period": "Mar 2013 — Jul 2013",
+    "location": "Arequipa, PE",
+    "highlights": [
+        "Programming of desktop system for optical client control",
+        "Implementation and configuration of online store. Training for page management"
+    ],
+    "technologies": [
+        "Java",
+        "MySql",
+        "Prestashop",
+        "HTML",
+        "CSS"
+    ],
+    "locale": "en",
+    "order": 9
+}

@@ -1,0 +1,28 @@
+{
+    "id": "lilab-en",
+    "company": "Lilab",
+    "role": "Fullstack Developer",
+    "period": "Aug 2020 — Dec 2025",
+    "location": "Lima, PE",
+    "highlights": [
+        "Design, development, and maintenance of a financial system (Factoring)",
+        "Integration with third-party services: Cavali (Invoices), Intico (Sms, Whatsapp), Prometeo (Bank accounts)",
+        "Development of satellite applications like electronic billing",
+        "Improvement and optimization of various existing business systems"
+    ],
+    "technologies": [
+        "Python",
+        "Django",
+        "Postgresql",
+        "MsSql",
+        "Javascript",
+        "Angular",
+        "React",
+        "Docker",
+        "Kubernetes",
+        "AWS",
+        "Sentry"
+    ],
+    "locale": "en",
+    "order": 1
+}

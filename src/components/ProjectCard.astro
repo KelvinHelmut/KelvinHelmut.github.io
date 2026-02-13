@@ -1,0 +1,59 @@
+---
+import { ExternalLink, Github } from "lucide-react";
+
+interface Props {
+    title: string;
+    description: string;
+    tags: string[];
+    link?: string;
+    github?: string;
+}
+
+const { title, description, tags, link, github } = Astro.props;
+---
+
+<div
+    class="group relative bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-100 dark:border-zinc-800 p-6 rounded-2xl transition-all duration-300 hover:border-zinc-200 dark:hover:border-zinc-700"
+>
+    <div class="flex justify-between items-start mb-4">
+        <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+            {title}
+        </h3>
+        <div class="flex gap-3">
+            {
+                github && (
+                    <a
+                        href={github}
+                        target="_blank"
+                        class="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                    >
+                        <Github size={18} />
+                    </a>
+                )
+            }
+            {
+                link && (
+                    <a
+                        href={link}
+                        target="_blank"
+                        class="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                    >
+                        <ExternalLink size={18} />
+                    </a>
+                )
+            }
+        </div>
+    </div>
+    <p class="text-zinc-600 dark:text-zinc-400 text-sm mb-6 leading-relaxed">
+        {description}
+    </p>
+    <div class="flex flex-wrap gap-2">
+        {
+            tags.map((tag) => (
+                <span class="px-2 py-1 bg-white dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 rounded-md text-[10px] uppercase tracking-wider font-bold text-zinc-500 dark:text-zinc-400">
+                    {tag}
+                </span>
+            ))
+        }
+    </div>
+</div>
