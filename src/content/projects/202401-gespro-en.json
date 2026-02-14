@@ -1,0 +1,18 @@
+{
+    "title": "Gespro",
+    "description": "Real estate project management system designed to optimize the tracking, control, and administration of real estate developments in real-time.",
+    "image": "../../assets/projects/gespro.png",
+    "tags": [
+        "Django",
+        "React",
+        "Tanstack Query",
+        "Postgresql",
+        "AWS",
+        "Docker"
+    ],
+    "link": "http://gespro.devitai.com/",
+    "featured": true,
+    "locale": "en",
+    "order": 100,
+    "isProduction": true
+}

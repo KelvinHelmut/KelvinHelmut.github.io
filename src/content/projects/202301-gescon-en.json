@@ -1,0 +1,18 @@
+{
+    "title": "Gescon",
+    "description": "Enterprise Resource Planning (ERP) system specialized for construction and real estate companies, integrating operational and administrative processes.",
+    "image": "../../assets/projects/gescon.png",
+    "tags": [
+        "Django",
+        "Sencha ExtJs",
+        "Postgresql",
+        "Nginx",
+        "AWS",
+        "Debian"
+    ],
+    "link": "https://gescon.devitai.com/",
+    "featured": true,
+    "locale": "en",
+    "order": 90,
+    "isProduction": true
+}

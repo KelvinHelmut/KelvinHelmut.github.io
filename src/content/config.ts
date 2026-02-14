@@ -27,6 +27,8 @@ const projectCollection = defineCollection({
         github: z.string().optional(),
         featured: z.boolean().default(false),
         locale: z.enum(['es', 'en']),
+        order: z.number().optional(),
+        isProduction: z.boolean().default(false),
     })
 });
 

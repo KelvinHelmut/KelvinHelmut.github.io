@@ -1,0 +1,14 @@
+{
+    "title": "Devitai",
+    "description": "Corporate landing page for software development and artificial intelligence services. Focused on simplicity and direct client communication.",
+    "tags": [
+        "Svelte",
+        "Web Design",
+        "Branding"
+    ],
+    "link": "https://devitai.com/",
+    "featured": true,
+    "locale": "en",
+    "order": 70,
+    "isProduction": true
+}
