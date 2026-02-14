@@ -51,6 +51,7 @@ const { title, platform, date, link, image } = Astro.props;
                         target="_blank"
                         class="text-zinc-300 dark:text-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
                         title="Ver credencial original"
+                        aria-label={`Ver credencial original de ${title}`}
                     >
                         <ExternalLink size={14} />
                     </a>

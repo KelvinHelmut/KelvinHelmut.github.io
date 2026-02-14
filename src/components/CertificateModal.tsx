@@ -7,9 +7,10 @@ interface Props {
     alt: string;
     triggerType?: "image" | "icon";
     children?: React.ReactNode;
+    ariaLabel?: string;
 }
 
-export default function CertificateModal({ src, alt, triggerType = "image", children }: Props) {
+export default function CertificateModal({ src, alt, triggerType = "image", children, ariaLabel }: Props) {
     const [isOpen, setIsOpen] = useState(false);
 
     // Prevent scrolling when modal is open
@@ -27,9 +28,10 @@ export default function CertificateModal({ src, alt, triggerType = "image", chil
     return (
         <>
             {/* Trigger */}
-            <div
+            <button
                 onClick={() => setIsOpen(true)}
-                className={`cursor-zoom-in relative group ${triggerType === "image" ? "w-full" : "inline-flex"}`}
+                className={`appearance-none border-none bg-transparent p-0 m-0 text-left block cursor-zoom-in relative group ${triggerType === "image" ? "w-full" : "inline-flex"}`}
+                aria-label={ariaLabel || (triggerType === "icon" ? `Ver certificado de ${alt}` : undefined)}
             >
                 {children}
                 {triggerType === "image" && (
@@ -39,7 +41,7 @@ export default function CertificateModal({ src, alt, triggerType = "image", chil
                         </div>
                     </div>
                 )}
-            </div>
+            </button>
 
             {/* Modal */}
             <AnimatePresence>
@@ -65,6 +67,7 @@ export default function CertificateModal({ src, alt, triggerType = "image", chil
                             <button
                                 onClick={() => setIsOpen(false)}
                                 className="absolute -top-12 right-0 p-2 text-zinc-400 hover:text-white transition-colors"
+                                aria-label="Cerrar modal"
                             >
                                 <X className="w-8 h-8" />
                             </button>

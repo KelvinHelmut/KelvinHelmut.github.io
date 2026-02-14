@@ -26,6 +26,8 @@ const { title, description, tags, link, github } = Astro.props;
                         href={github}
                         target="_blank"
                         class="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                        aria-label={`Ver código fuente de ${title} en GitHub`}
+                        title="Ver código fuente"
                     >
                         <Github size={18} />
                     </a>
@@ -37,6 +39,8 @@ const { title, description, tags, link, github } = Astro.props;
                         href={link}
                         target="_blank"
                         class="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                        aria-label={`Visitar sitio web de ${title}`}
+                        title="Visitar sitio web"
                     >
                         <ExternalLink size={18} />
                     </a>
