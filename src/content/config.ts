@@ -18,10 +18,10 @@ const experienceCollection = defineCollection({
 
 const projectCollection = defineCollection({
     type: 'data',
-    schema: z.object({
+    schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
-        image: z.string().optional(),
+        image: image().optional(),
         tags: z.array(z.string()),
         link: z.string().optional(),
         github: z.string().optional(),
@@ -32,12 +32,14 @@ const projectCollection = defineCollection({
 
 const educationCollection = defineCollection({
     type: 'data',
-    schema: z.object({
+    schema: ({ image }) => z.object({
         institution: z.string(),
         degree: z.string(),
         period: z.string(),
         description: z.string().optional(),
         highlights: z.array(z.string()).optional(),
+        image: image().optional(),
+        certificateUrl: z.string().optional(),
         locale: z.enum(['es', 'en']),
         order: z.number().optional(),
     })
@@ -45,11 +47,12 @@ const educationCollection = defineCollection({
 
 const courseCollection = defineCollection({
     type: 'data',
-    schema: z.object({
+    schema: ({ image }) => z.object({
         title: z.string(),
         platform: z.string(),
         date: z.string(),
         link: z.string().optional(),
+        image: image().optional(),
         locale: z.enum(['es', 'en']),
         order: z.number().optional(),
     })
@@ -57,12 +60,12 @@ const courseCollection = defineCollection({
 
 const blogCollection = defineCollection({
     type: 'content',
-    schema: z.object({
+    schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
         pubDate: z.date(),
         updatedDate: z.date().optional(),
-        heroImage: z.string().optional(),
+        heroImage: image().optional(),
         tags: z.array(z.string()),
         locale: z.enum(['es', 'en']),
     })

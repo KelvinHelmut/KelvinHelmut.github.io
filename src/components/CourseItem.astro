@@ -1,35 +1,67 @@
 ---
+import { Award, ExternalLink } from "lucide-react";
+import CertificateModal from "./CertificateModal";
+
 interface Props {
     title: string;
     platform: string;
     date: string;
     link?: string;
+    image?: any;
 }
 
-const { title, platform, date, link } = Astro.props;
+const { title, platform, date, link, image } = Astro.props;
 ---
 
 <div
-    class="group flex items-center justify-between p-3 -mx-3 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
+    class="flex items-center justify-between py-3 rounded-xl transition-colors"
 >
-    <div>
+    <div class="flex-grow">
         <h4
-            class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-primary transition-colors"
+            class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 italic"
         >
+            {title}
+        </h4>
+        <p class="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">
+            {platform}
+        </p>
+    </div>
+
+    <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2">
             {
-                link ? (
-                    <a href={link} target="_blank" class="hover:underline">
-                        {title}
-                    </a>
-                ) : (
-                    title
+                image && (
+                    <CertificateModal
+                        client:load
+                        src={image.src}
+                        alt={`${title} certificate`}
+                        triggerType="icon"
+                    >
+                        <div
+                            class="text-zinc-300 dark:text-zinc-600 hover:text-amber-500 dark:hover:text-amber-400 transition-colors cursor-pointer"
+                            title="Ver certificado"
+                        >
+                            <Award size={16} />
+                        </div>
+                    </CertificateModal>
                 )
             }
-        </h4>
-        <p class="text-xs text-zinc-500 dark:text-zinc-400">{platform}</p>
+            {
+                link && (
+                    <a
+                        href={link}
+                        target="_blank"
+                        class="text-zinc-300 dark:text-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                        title="Ver credencial original"
+                    >
+                        <ExternalLink size={14} />
+                    </a>
+                )
+            }
+        </div>
+        <span
+            class="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest whitespace-nowrap min-w-[70px] text-right"
+            >{date}</span
+        >
     </div>
-    <span
-        class="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest"
-        >{date}</span
-    >
 </div>
