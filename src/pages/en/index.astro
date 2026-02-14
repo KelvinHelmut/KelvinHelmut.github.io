@@ -1,7 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import FadeIn from "../../components/FadeIn";
-import TimelineItem from "../../components/TimelineItem.astro";
+import ScrollToTop from "../../components/ScrollToTop";
+import ExperienceSection from "../../components/ExperienceSection";
 import ProjectCard from "../../components/ProjectCard.astro";
 import EducationItem from "../../components/EducationItem.astro";
 import CourseItem from "../../components/CourseItem.astro";
@@ -141,21 +142,12 @@ const courses: CollectionEntry<"courses">[] = (
             >
                 {t("section.experience")}
             </h2>
-            <div class="space-y-0">
-                {
-                    experience.map((exp) => (
-                        <TimelineItem
-                            company={exp.data.company}
-                            role={exp.data.role}
-                            period={exp.data.period}
-                            location={exp.data.location}
-                            description={exp.data.description}
-                            highlights={exp.data.highlights}
-                            technologies={exp.data.technologies}
-                        />
-                    ))
-                }
-            </div>
+            <ExperienceSection
+                client:load
+                items={experience}
+                seeMoreLabel={t("button.seeMore")}
+                seeLessLabel={t("button.seeLess")}
+            />
         </FadeIn>
     </section>
 
@@ -239,4 +231,5 @@ const courses: CollectionEntry<"courses">[] = (
             </FadeIn>
         </section>
     </div>
+    <ScrollToTop client:load />
 </Layout>

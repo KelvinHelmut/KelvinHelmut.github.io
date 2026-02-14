@@ -20,6 +20,8 @@ export const ui = {
         'section.courses': 'Courses & Certifications',
         'section.blog': 'Latest Posts',
         'footer.rights': 'All rights reserved.',
+        'button.seeMore': 'See More',
+        'button.seeLess': 'See Less',
     },
     es: {
         'nav.home': 'Inicio',
@@ -35,5 +37,7 @@ export const ui = {
         'section.courses': 'Cursos y Certificaciones',
         'section.blog': 'Últimos Artículos',
         'footer.rights': 'Todos los derechos reservados.',
+        'button.seeMore': 'Ver más',
+        'button.seeLess': 'Ver menos',
     },
 } as const;
