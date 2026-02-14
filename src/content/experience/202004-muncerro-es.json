@@ -1,0 +1,20 @@
+{
+    "id": "muncerro-es",
+    "company": "Municipalidad distrital Cerro Colorado",
+    "role": "Freelance Developer",
+    "period": "Mar 2020 — Abr 2020",
+    "location": "Arequipa, PE",
+    "highlights": [
+        "Desarrollo y corrección de funcionalidades en módulo de recursos humanos de sistema de gestión de gobiernos",
+        "Programación de vistas, triggers y funciones (PlPgSql)"
+    ],
+    "technologies": [
+        "PHP",
+        "Sencha ExtJs",
+        "Postgresql",
+        "Svn",
+        "Docker"
+    ],
+    "locale": "es",
+    "order": 70
+}

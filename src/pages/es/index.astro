@@ -17,7 +17,7 @@ const experience: CollectionEntry<"experience">[] = (
     )
 ).sort(
     (a: CollectionEntry<"experience">, b: CollectionEntry<"experience">) =>
-        (a.data.order || 99) - (b.data.order || 99)
+        (b.data.order || 0) - (a.data.order || 0)
 );
 
 const projects: CollectionEntry<"projects">[] = await getCollection(
@@ -32,7 +32,7 @@ const education: CollectionEntry<"education">[] = (
     )
 ).sort(
     (a: CollectionEntry<"education">, b: CollectionEntry<"education">) =>
-        (a.data.order || 99) - (b.data.order || 99)
+        (b.data.order || 0) - (a.data.order || 0)
 );
 
 const courses: CollectionEntry<"courses">[] = (
@@ -42,7 +42,7 @@ const courses: CollectionEntry<"courses">[] = (
     )
 ).sort(
     (a: CollectionEntry<"courses">, b: CollectionEntry<"courses">) =>
-        (a.data.order || 99) - (b.data.order || 99)
+        (b.data.order || 0) - (a.data.order || 0)
 );
 ---
 
