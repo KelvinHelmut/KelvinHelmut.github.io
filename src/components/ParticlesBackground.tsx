@@ -41,17 +41,17 @@ export default function ParticlesBackground() {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.char = Math.random() > 0.8 ? (Math.random() > 0.5 ? '1' : '0') : null;
+                this.char = Math.random() > 0.7 ? (Math.random() > 0.5 ? '1' : '0') : null;
                 this.size = this.char ? 10 : Math.random() * 1.5 + 0.5;
                 this.speedX = (Math.random() - 0.5) * 0.3;
                 this.speedY = (Math.random() - 0.5) * 0.3;
-                this.opacity = Math.random() * 0.4 + 0.2;
+                this.opacity = Math.random() * 0.6 + 0.1;
                 this.color = TECH_COLORS[Math.floor(Math.random() * TECH_COLORS.length)] || '59, 130, 246';
             }
 
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
+            update(deltaTime: number) {
+                this.x += this.speedX * deltaTime;
+                this.y += this.speedY * deltaTime;
 
                 if (this.x > canvas.width) this.x = 0;
                 else if (this.x < 0) this.x = canvas.width;
@@ -64,11 +64,21 @@ export default function ParticlesBackground() {
                 const isDark = document.documentElement.classList.contains('dark');
 
                 // Adjust vibrant colors based on theme
-                const finalOpacity = isDark ? this.opacity : this.opacity * 0.7;
+                const finalOpacity = isDark ? this.opacity : this.opacity * 0.9;
                 const colorStr = `rgba(${this.color}, ${finalOpacity})`;
 
-                ctx.shadowBlur = isDark ? 10 : 0;
-                ctx.shadowColor = `rgba(${this.color}, 0.5)`;
+                if (isDark) {
+                    // Simulating glow more efficiently than shadowBlur by drawing a slightly larger layer
+                    ctx.fillStyle = `rgba(${this.color}, ${finalOpacity * 0.3})`;
+                    if (this.char) {
+                        ctx.font = `${this.size + 1}px monospace`;
+                        ctx.fillText(this.char, this.x - 0.5, this.y);
+                    } else {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size * 2, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
 
                 if (this.char) {
                     ctx.font = `${this.size}px monospace`;
@@ -80,7 +90,6 @@ export default function ParticlesBackground() {
                     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                     ctx.fill();
                 }
-                ctx.shadowBlur = 0; // Reset for performance
             }
         }
 
@@ -137,14 +146,21 @@ export default function ParticlesBackground() {
             }
         };
 
-        const animate = () => {
+        let lastTime = 0;
+        const animate = (timestamp: number) => {
             if (!ctx || !canvas) return;
+
+            // Calculate delta time
+            // Normalize to 60fps (16.6ms per frame)
+            const deltaTime = lastTime ? (timestamp - lastTime) / (1000 / 60) : 1;
+            lastTime = timestamp;
+
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             for (let i = 0; i < particles.length; i++) {
                 const p = particles[i];
                 if (p) {
-                    p.update();
+                    p.update(deltaTime);
                     p.draw();
                 }
             }
@@ -165,7 +181,7 @@ export default function ParticlesBackground() {
         window.addEventListener('mouseleave', handleMouseLeave);
 
         resizeCanvas();
-        animate();
+        requestAnimationFrame(animate);
 
         return () => {
             window.removeEventListener('resize', resizeCanvas);
