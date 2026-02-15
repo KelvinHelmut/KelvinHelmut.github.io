@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, FileText } from "lucide-react";
 
 interface Experience {
     data: {
@@ -11,6 +11,7 @@ interface Experience {
         description?: string;
         highlights?: string[];
         technologies?: string[];
+        certificateUrl?: string;
     };
 }
 
@@ -19,9 +20,10 @@ interface Props {
     initialCount?: number;
     seeMoreLabel: string;
     seeLessLabel: string;
+    certificateLabel: string;
 }
 
-export default function ExperienceSection({ items, initialCount = 3, seeMoreLabel, seeLessLabel }: Props) {
+export default function ExperienceSection({ items, initialCount = 3, seeMoreLabel, seeLessLabel, certificateLabel }: Props) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const displayedItems = isExpanded ? items : items.slice(0, initialCount);
@@ -45,16 +47,32 @@ export default function ExperienceSection({ items, initialCount = 3, seeMoreLabe
                                 <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100">
                                     {exp.data.role}
                                 </h3>
-                                <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest">
-                                    {exp.data.period}
-                                </span>
+                                <div className="flex items-center gap-3">
+                                    {exp.data.certificateUrl && (
+                                        <a
+                                            href={exp.data.certificateUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-1.5 text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors duration-200"
+                                            title={certificateLabel}
+                                        >
+                                            <span className="text-[9px] font-bold uppercase tracking-widest border-b border-dotted border-zinc-300 dark:border-zinc-800 hover:border-zinc-900 dark:hover:border-zinc-200">
+                                                {certificateLabel}
+                                            </span>
+                                            <FileText size={10} className="stroke-[2.5px] opacity-70" />
+                                        </a>
+                                    )}
+                                    <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest">
+                                        {exp.data.period}
+                                    </span>
+                                </div>
                             </div>
                             <div className="flex justify-between items-center mb-4">
                                 <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400 italic">
                                     {exp.data.company}
                                 </p>
                                 {exp.data.location && (
-                                    <span className="text-[10px] text-zinc-400 dark:text-zinc-500">
+                                    <span className="text-[10px] text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-medium">
                                         {exp.data.location}
                                     </span>
                                 )}

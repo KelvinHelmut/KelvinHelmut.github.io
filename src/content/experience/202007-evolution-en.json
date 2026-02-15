@@ -16,5 +16,6 @@
         "Vuetify"
     ],
     "locale": "en",
-    "order": 90
+    "order": 90,
+    "certificateUrl": "/documents/certificates/evolution.pdf"
 }

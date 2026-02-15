@@ -24,5 +24,6 @@
         "Sentry"
     ],
     "locale": "en",
-    "order": 100
+    "order": 100,
+    "certificateUrl": "/documents/certificates/lilab.pdf"
 }

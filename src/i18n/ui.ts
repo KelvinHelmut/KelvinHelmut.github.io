@@ -22,6 +22,7 @@ export const ui = {
         'footer.rights': 'All rights reserved.',
         'button.seeMore': 'See More',
         'button.seeLess': 'See Less',
+        'button.certificate': 'View Certificate',
     },
     es: {
         'nav.home': 'Inicio',
@@ -39,5 +40,6 @@ export const ui = {
         'footer.rights': 'Todos los derechos reservados.',
         'button.seeMore': 'Ver más',
         'button.seeLess': 'Ver menos',
+        'button.certificate': 'Ver Certificado',
     },
 } as const;

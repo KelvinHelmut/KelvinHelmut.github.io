@@ -13,6 +13,7 @@ const experienceCollection = defineCollection({
         technologies: z.array(z.string()).optional(),
         locale: z.enum(['es', 'en']),
         order: z.number().optional(),
+        certificateUrl: z.string().optional(),
     })
 });
 
