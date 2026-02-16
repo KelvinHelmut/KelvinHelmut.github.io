@@ -151,6 +151,8 @@ const courses: CollectionEntry<"courses">[] = (
                         <Image
                             src={profileImage}
                             alt="Kelvin Helmut"
+                            loading="eager"
+                            fetchpriority="high"
                             class="relative w-full h-full object-cover rounded-full shadow-2xl border border-zinc-100/50 dark:border-zinc-800/50 opacity-85 saturate-[0.7] brightness-95 group-hover:opacity-100 group-hover:saturate-100 group-hover:brightness-100 transition-all duration-700 ease-in-out group-hover:scale-110"
                         />
                     </div>
