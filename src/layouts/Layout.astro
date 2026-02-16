@@ -2,7 +2,7 @@
 import { getLangFromUrl } from "../i18n/utils";
 import ParticlesBackground from "../components/ParticlesBackground";
 import ThemeToggle from "../components/ThemeToggle";
-import { Languages } from "lucide-react";
+import { Languages, Github, Linkedin } from "lucide-react";
 import "../styles/global.css";
 
 interface Props {
@@ -102,22 +102,71 @@ const lang = getLangFromUrl(Astro.url);
             </main>
 
             <footer
-                class="mt-24 pt-8 border-t border-zinc-100 dark:border-zinc-900 text-sm text-zinc-500 flex justify-between"
+                class="mt-20 py-12 border-t border-zinc-100 dark:border-zinc-900"
             >
-                <span>&copy; {new Date().getFullYear()} Kelvin Helmut</span>
-                <div class="flex gap-4">
-                    <a
-                        href="https://github.com/KelvinHelmut"
-                        target="_blank"
-                        class="hover:text-zinc-900 dark:hover:text-zinc-100 italic transition-colors"
-                        >GitHub</a
+                <div
+                    class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8"
+                >
+                    <div class="flex flex-col gap-1">
+                        <span
+                            class="text-sm font-bold text-zinc-900 dark:text-zinc-100 italic text-balance leading-tight"
+                            >Kelvin Helmut</span
+                        >
+                        <span
+                            class="text-[10px] text-zinc-500 dark:text-zinc-500 uppercase tracking-widest font-medium leading-none"
+                            >Software Engineer & Architect</span
+                        >
+                    </div>
+
+                    <div class="flex flex-col md:items-end gap-1">
+                        <div class="flex gap-6 leading-none">
+                            <a
+                                href="https://github.com/KelvinHelmut"
+                                target="_blank"
+                                class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                            >
+                                <Github size={14} />
+                                <span>GitHub</span>
+                            </a>
+                            <a
+                                href="https://linkedin.com/in/kelvinhelmut"
+                                target="_blank"
+                                class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                            >
+                                <Linkedin size={14} />
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                        <span
+                            class="text-[10px] text-zinc-400 dark:text-zinc-600 leading-none"
+                        >
+                            &copy; {new Date().getFullYear()} — Arequipa, Perú
+                        </span>
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <div
+                        class="flex items-center gap-3 py-2 px-4 rounded-full bg-zinc-100/50 dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-800/50"
                     >
-                    <a
-                        href="https://linkedin.com/in/kelvinhelmut"
-                        target="_blank"
-                        class="hover:text-zinc-900 dark:hover:text-zinc-100 italic transition-colors"
-                        >LinkedIn</a
-                    >
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
+                            ></span>
+                            <span
+                                class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"
+                            ></span>
+                        </span>
+                        <span
+                            class="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-500 dark:text-zinc-400"
+                        >
+                            {
+                                lang === "es"
+                                    ? "Disponible para nuevos proyectos"
+                                    : "Available for new projects"
+                            }
+                        </span>
+                    </div>
                 </div>
             </footer>
         </div>
