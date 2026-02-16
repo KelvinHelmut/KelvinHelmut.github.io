@@ -6,6 +6,7 @@ import ExperienceSection from "../../components/ExperienceSection";
 import ProjectCard from "../../components/ProjectCard.astro";
 import EducationItem from "../../components/EducationItem.astro";
 import CourseItem from "../../components/CourseItem.astro";
+import PlatziAchievement from "../../components/PlatziAchievement.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { useTranslations } from "../../i18n/utils";
 import { ui } from "../../i18n/ui";
@@ -231,6 +232,12 @@ const courses: CollectionEntry<"courses">[] = (
                         ))
                     }
                 </div>
+                <PlatziAchievement
+                    title={t("courses.platzi.title")}
+                    subtitle={t("courses.platzi.subtitle")}
+                    badge={t("courses.platzi.badge")}
+                    link="https://platzi.com/p/kelvin.provincia/"
+                />
             </FadeIn>
         </section>
     </div>
