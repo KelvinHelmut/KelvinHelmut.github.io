@@ -68,9 +68,11 @@ const lang = getLangFromUrl(Astro.url);
     <body>
         <ParticlesBackground client:load />
         <div
-            class="relative z-10 max-w-3xl mx-auto px-6 py-12 min-h-screen flex flex-col"
+            class="relative z-10 max-w-3xl mx-auto px-6 min-h-screen flex flex-col"
         >
-            <header class="mb-16 flex justify-between items-center">
+            <header
+                class="sticky top-0 z-50 py-8 mb-8 -mx-6 px-6 flex justify-between items-center bg-white/70 dark:bg-zinc-950/70 backdrop-blur-md border-b border-transparent transition-colors"
+            >
                 <a
                     href={lang === "es" ? "/" : "/en"}
                     class="text-xl font-bold tracking-tight">KH</a
