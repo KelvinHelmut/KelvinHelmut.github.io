@@ -71,8 +71,9 @@ const lang = getLangFromUrl(Astro.url);
             class="relative z-10 max-w-3xl mx-auto px-6 py-12 min-h-screen flex flex-col"
         >
             <header class="mb-16 flex justify-between items-center">
-                <a href={`/${lang}`} class="text-xl font-bold tracking-tight"
-                    >KH</a
+                <a
+                    href={lang === "es" ? "/" : "/en"}
+                    class="text-xl font-bold tracking-tight">KH</a
                 >
                 <nav class="flex gap-4 items-center">
                     <slot name="nav" />
@@ -80,9 +81,7 @@ const lang = getLangFromUrl(Astro.url);
                     </div>
                     <ThemeToggle client:load />
                     <a
-                        href={lang === "es"
-                            ? `/en${Astro.url.pathname.replace("/es", "")}`
-                            : `/es${Astro.url.pathname.replace("/en", "")}`}
+                        href={lang === "es" ? "/en" : "/"}
                         class="flex items-center gap-1.5 p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 text-sm font-bold text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
                         title={lang === "es"
                             ? "Switch to English"
