@@ -58,7 +58,7 @@ const { institution, degree, period, highlights, image, certificateUrl } =
                     <Image
                         src={image}
                         alt={`${degree} certificate`}
-                        class="w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-500"
+                        class="w-full h-auto object-cover grayscale brightness-90 group-hover/edu:grayscale-0 group-hover/edu:brightness-100 transition-all duration-700 ease-in-out hover:scale-[1.02]"
                     />
                 </CertificateModal>
             </div>
