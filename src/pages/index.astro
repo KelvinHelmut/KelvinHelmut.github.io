@@ -12,7 +12,7 @@ import { useTranslations } from "../i18n/utils";
 import { ui } from "../i18n/ui";
 import { Image } from "astro:assets";
 import profileImage from "../assets/profile.png";
-import { Mail, Phone, Github, Linkedin, MapPin, Globe } from "lucide-react";
+import { Mail, Phone, Github, Linkedin, MapPin } from "lucide-react";
 
 const t = useTranslations("es");
 const experience: CollectionEntry<"experience">[] = (
@@ -100,6 +100,7 @@ const courses: CollectionEntry<"courses">[] = (
                         <a
                             href="mailto:aek6.io@gmail.com"
                             class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                            aria-label={t("social.email")}
                         >
                             <Mail size={14} />
                             <span>aek6.io@gmail.com</span>
@@ -107,37 +108,36 @@ const courses: CollectionEntry<"courses">[] = (
                         <a
                             href="tel:+51954733536"
                             class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                            aria-label={t("social.phone")}
                         >
                             <Phone size={14} />
                             <span>+51 954 733 536</span>
                         </a>
                         <div
-                            class="flex items-center gap-4 pt-1 w-full md:w-auto"
+                            class="flex flex-wrap items-center gap-4 pt-1 w-full"
                         >
-                            <a
-                                href="https://linkedin.com/in/kelvinhelmut"
-                                target="_blank"
-                                class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
-                            >
-                                <Linkedin size={14} />
-                                <span>LinkedIn</span>
-                            </a>
-                            <a
-                                href="https://github.com/KelvinHelmut"
-                                target="_blank"
-                                class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
-                            >
-                                <Github size={14} />
-                                <span>GitHub</span>
-                            </a>
-                            <a
-                                href="https://kelvinhelmut.github.io/"
-                                target="_blank"
-                                class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
-                            >
-                                <Globe size={14} />
-                                <span>Web</span>
-                            </a>
+                            <div class="flex items-center gap-4">
+                                <a
+                                    href="https://linkedin.com/in/kelvinhelmut"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                                    aria-label={t("social.linkedin")}
+                                >
+                                    <Linkedin size={14} />
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a
+                                    href="https://github.com/KelvinHelmut"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                                    aria-label={t("social.github")}
+                                >
+                                    <Github size={14} />
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

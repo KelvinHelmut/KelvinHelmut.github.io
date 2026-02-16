@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl } from "../i18n/utils";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import ParticlesBackground from "../components/ParticlesBackground";
 import ThemeToggle from "../components/ThemeToggle";
 import { Languages, Github, Linkedin } from "lucide-react";
@@ -8,10 +8,15 @@ import "../styles/global.css";
 interface Props {
     title: string;
     description?: string;
+    image?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image = "/og-image.webp" } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const siteUrl = "https://kelvinhelmut.github.io";
+const fullTitle = `${title} | Kelvin Helmut`;
 ---
 
 <!DOCTYPE html>
@@ -21,6 +26,26 @@ const lang = getLangFromUrl(Astro.url);
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
+
+        <!-- SEO Primary Meta Tags -->
+        <title>{fullTitle}</title>
+        <meta name="title" content={fullTitle} />
+        <meta name="description" content={description} />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:title" content={fullTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={new URL(image, siteUrl)} />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={siteUrl} />
+        <meta property="twitter:title" content={fullTitle} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={new URL(image, siteUrl)} />
+
         <script is:inline>
             const theme = (() => {
                 if (
@@ -41,12 +66,10 @@ const lang = getLangFromUrl(Astro.url);
                 document.documentElement.classList.remove("dark");
             }
         </script>
-        <title>{title} | Kelvin Helmut</title>
-        <meta name="description" content={description} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
             rel="stylesheet"
         />
 
@@ -65,17 +88,20 @@ const lang = getLangFromUrl(Astro.url);
             gtag("config", "UA-172160606-1");
         </script>
     </head>
-    <body>
+    <body
+        class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 selection:bg-emerald-100 dark:selection:bg-emerald-900/30 overflow-x-hidden min-h-screen"
+    >
         <ParticlesBackground client:load />
         <div
             class="relative z-10 max-w-3xl mx-auto px-6 min-h-screen flex flex-col"
         >
             <header
-                class="sticky top-0 z-50 py-4 md:py-8 mb-8 -mx-6 px-6 flex justify-between items-center bg-white/70 dark:bg-zinc-950/70 backdrop-blur-md border-b border-transparent transition-colors"
+                class="sticky top-0 z-50 py-4 md:py-8 md:mb-8 -mx-6 px-6 flex justify-between items-center bg-white/70 dark:bg-zinc-950/70 backdrop-blur-md border-b border-transparent transition-colors"
             >
                 <a
                     href={lang === "es" ? "/" : "/en"}
-                    class="text-xl font-bold tracking-tight">KH</a
+                    class="text-xl font-bold tracking-tight"
+                    aria-label={t("nav.home")}>KH</a
                 >
                 <nav class="flex gap-2 md:gap-4 items-center">
                     <slot name="nav" />
@@ -87,6 +113,9 @@ const lang = getLangFromUrl(Astro.url);
                     <a
                         href={lang === "es" ? "/en" : "/"}
                         class="flex items-center gap-1.5 p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 text-sm font-bold text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                        aria-label={lang === "es"
+                            ? "Switch to English"
+                            : "Cambiar a Español"}
                         title={lang === "es"
                             ? "Switch to English"
                             : "Cambiar a Español"}
@@ -112,11 +141,11 @@ const lang = getLangFromUrl(Astro.url);
                     <div class="flex flex-col gap-1">
                         <span
                             class="text-sm font-bold text-zinc-900 dark:text-zinc-100 italic text-balance leading-tight"
-                            >Kelvin Helmut</span
+                            >{t("footer.name")}</span
                         >
                         <span
                             class="text-[10px] text-zinc-500 dark:text-zinc-500 uppercase tracking-widest font-medium leading-none"
-                            >Software Engineer & Architect</span
+                            >{t("footer.role")}</span
                         >
                     </div>
 
@@ -125,7 +154,9 @@ const lang = getLangFromUrl(Astro.url);
                             <a
                                 href="https://github.com/KelvinHelmut"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                                aria-label={t("social.github")}
                             >
                                 <Github size={14} />
                                 <span>GitHub</span>
@@ -133,7 +164,9 @@ const lang = getLangFromUrl(Astro.url);
                             <a
                                 href="https://linkedin.com/in/kelvinhelmut"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                                aria-label={t("social.linkedin")}
                             >
                                 <Linkedin size={14} />
                                 <span>LinkedIn</span>
@@ -142,7 +175,9 @@ const lang = getLangFromUrl(Astro.url);
                         <span
                             class="text-[10px] text-zinc-400 dark:text-zinc-600 leading-none"
                         >
-                            &copy; {new Date().getFullYear()} — Arequipa, Perú
+                            &copy; {new Date().getFullYear()} — {
+                                t("footer.location")
+                            }
                         </span>
                     </div>
                 </div>
@@ -162,11 +197,7 @@ const lang = getLangFromUrl(Astro.url);
                         <span
                             class="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-500 dark:text-zinc-400"
                         >
-                            {
-                                lang === "es"
-                                    ? "Disponible para nuevos proyectos"
-                                    : "Available for new projects"
-                            }
+                            {t("footer.availability")}
                         </span>
                     </div>
                 </div>
