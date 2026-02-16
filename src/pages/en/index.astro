@@ -10,6 +10,8 @@ import PlatziAchievement from "../../components/PlatziAchievement.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { useTranslations } from "../../i18n/utils";
 import { ui } from "../../i18n/ui";
+import { Image } from "astro:assets";
+import profileImage from "../../assets/profile.png";
 import { Mail, Phone, Github, Linkedin, MapPin, Globe } from "lucide-react";
 
 const t = useTranslations("en");
@@ -75,59 +77,84 @@ const courses: CollectionEntry<"courses">[] = (
 
     <section class="mt-12 mb-24">
         <FadeIn client:load>
-            <h1 class="text-4xl font-bold tracking-tight mb-4">
-                Kelvin Helmut
-            </h1>
-            <h2
-                class="text-xl text-zinc-500 dark:text-zinc-400 font-medium mb-2"
-            >
-                {t("hero.title")}
-            </h2>
             <div
-                class="flex flex-wrap gap-y-2 gap-x-4 mb-8 text-sm text-zinc-400 dark:text-zinc-500 font-medium"
+                class="flex flex-col md:flex-row md:items-start justify-between gap-10 mb-10"
             >
-                <div class="flex items-center gap-1.5">
-                    <MapPin size={14} />
-                    <span>Arequipa, Peru</span>
+                <div class="flex-grow">
+                    <h1 class="text-4xl font-bold tracking-tight mb-4">
+                        Kelvin Helmut
+                    </h1>
+                    <h2
+                        class="text-xl text-zinc-500 dark:text-zinc-400 font-medium mb-6"
+                    >
+                        {t("hero.title")}
+                    </h2>
+
+                    <div
+                        class="flex flex-wrap gap-y-3 gap-x-6 text-sm text-zinc-400 dark:text-zinc-500 font-medium"
+                    >
+                        <div class="flex items-center gap-1.5">
+                            <MapPin size={14} />
+                            <span>Arequipa, Peru</span>
+                        </div>
+                        <a
+                            href="mailto:aek6.io@gmail.com"
+                            class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                        >
+                            <Mail size={14} />
+                            <span>aek6.io@gmail.com</span>
+                        </a>
+                        <a
+                            href="tel:+51954733536"
+                            class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                        >
+                            <Phone size={14} />
+                            <span>+51 954 733 536</span>
+                        </a>
+                        <div
+                            class="flex items-center gap-4 pt-1 w-full md:w-auto"
+                        >
+                            <a
+                                href="https://linkedin.com/in/kelvinhelmut"
+                                target="_blank"
+                                class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                            >
+                                <Linkedin size={14} />
+                                <span>LinkedIn</span>
+                            </a>
+                            <a
+                                href="https://github.com/KelvinHelmut"
+                                target="_blank"
+                                class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                            >
+                                <Github size={14} />
+                                <span>GitHub</span>
+                            </a>
+                            <a
+                                href="https://kelvinhelmut.github.io/"
+                                target="_blank"
+                                class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                            >
+                                <Globe size={14} />
+                                <span>Web</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <a
-                    href="mailto:aek6.io@gmail.com"
-                    class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
-                >
-                    <Mail size={14} />
-                    <span>aek6.io@gmail.com</span>
-                </a>
-                <a
-                    href="tel:+51954733536"
-                    class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
-                >
-                    <Phone size={14} />
-                    <span>+51 954 733 536</span>
-                </a>
-                <a
-                    href="https://linkedin.com/in/kelvinhelmut"
-                    target="_blank"
-                    class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors border-l border-zinc-200 dark:border-zinc-800 pl-4"
-                >
-                    <Linkedin size={14} />
-                    <span>LinkedIn</span>
-                </a>
-                <a
-                    href="https://github.com/KelvinHelmut"
-                    target="_blank"
-                    class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
-                >
-                    <Github size={14} />
-                    <span>GitHub</span>
-                </a>
-                <a
-                    href="https://kelvinhelmut.github.io/"
-                    target="_blank"
-                    class="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
-                >
-                    <Globe size={14} />
-                    <span>kelvinhelmut.github.io</span>
-                </a>
+
+                <div class="flex-shrink-0 group mx-auto md:mx-0">
+                    <div class="relative w-32 h-32 md:w-40 md:h-40">
+                        <div
+                            class="absolute inset-0 bg-emerald-500/10 dark:bg-emerald-500/5 rounded-full scale-105 group-hover:scale-110 transition-transform duration-700 blur-xl"
+                        >
+                        </div>
+                        <Image
+                            src={profileImage}
+                            alt="Kelvin Helmut"
+                            class="relative w-full h-full object-cover rounded-full shadow-2xl border border-zinc-100/50 dark:border-zinc-800/50 opacity-85 saturate-[0.7] brightness-95 group-hover:opacity-100 group-hover:saturate-100 group-hover:brightness-100 transition-all duration-700 ease-in-out group-hover:scale-110"
+                        />
+                    </div>
+                </div>
             </div>
             <p
                 class="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-2xl font-light"
