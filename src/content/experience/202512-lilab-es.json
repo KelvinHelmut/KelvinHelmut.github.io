@@ -25,5 +25,7 @@
     ],
     "locale": "es",
     "order": 100,
-    "certificateUrl": "/documents/certificates/lilab.pdf"
+    "certificateUrl": "/documents/certificates/lilab.pdf",
+    "contractType": "type.fulltime",
+    "workMode": "mode.remote"
 }

@@ -1,0 +1,24 @@
+{
+    "id": "freelance-2020-es",
+    "company": "Proyectos Independientes",
+    "role": "Fullstack Developer",
+    "period": "Mar 2020 — Jul 2020",
+    "location": "Arequipa, PE",
+    "highlights": [
+        "Evolution Soluciones Digitales: Automatización de mensajería masiva de WhatsApp y desarrollo de catálogo virtual con dashboard estadístico.",
+        "Municipalidad Distrital de Cerro Colorado: Desarrollo de módulos de RR.HH. y optimización de base de datos mediante triggers y funciones avanzadas."
+    ],
+    "technologies": [
+        "PHP",
+        "Vue",
+        "Electron",
+        "Postgresql",
+        "Sencha ExtJs",
+        "Docker",
+        "Selenium"
+    ],
+    "locale": "es",
+    "order": 90,
+    "contractType": "type.freelance",
+    "workMode": "mode.hybrid"
+}

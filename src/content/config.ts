@@ -14,6 +14,8 @@ const experienceCollection = defineCollection({
         locale: z.enum(['es', 'en']),
         order: z.number().optional(),
         certificateUrl: z.string().optional(),
+        contractType: z.string().optional(), // e.g., Full-time, Freelance, Contract
+        workMode: z.string().optional(),     // e.g., Remoto, Presencial, Híbrido
     })
 });
 

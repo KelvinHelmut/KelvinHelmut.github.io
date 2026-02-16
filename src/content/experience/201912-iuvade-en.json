@@ -1,12 +1,12 @@
 {
     "id": "iuvade-2018-en",
     "company": "IUVADE",
-    "role": "Full stack developer",
+    "role": "Fullstack Developer",
     "period": "Jul 2018 — Dec 2019",
     "location": "Arequipa, PE",
     "highlights": [
-        "Code optimization and performance improvement of functionalities in government management, business management and electronic billing systems",
-        "Migration of satellite municipal systems to new versions (code, databases and GNU/Linux server configuration)",
+        "Code optimization and performance improvement of functionalities in government management, business management, and electronic billing systems",
+        "Migration of satellite municipal systems to new versions (code, databases, and GNU/Linux server configuration)",
         "Maintenance and deployment of functionalities to production systems"
     ],
     "technologies": [
@@ -19,5 +19,7 @@
         "Apache"
     ],
     "locale": "en",
-    "order": 60
+    "order": 60,
+    "contractType": "type.contract",
+    "workMode": "mode.onsite"
 }

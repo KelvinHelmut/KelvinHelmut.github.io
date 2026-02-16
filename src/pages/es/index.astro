@@ -8,6 +8,7 @@ import ScrollToTop from "../../components/ScrollToTop";
 import ExperienceSection from "../../components/ExperienceSection";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { useTranslations } from "../../i18n/utils";
+import { ui } from "../../i18n/ui";
 import { Mail, Phone, Github, Linkedin, MapPin, Globe } from "lucide-react";
 
 const t = useTranslations("es");
@@ -148,6 +149,7 @@ const courses: CollectionEntry<"courses">[] = (
                 seeMoreLabel={t("button.seeMore")}
                 seeLessLabel={t("button.seeLess")}
                 certificateLabel={t("button.certificate")}
+                translations={ui["es"]}
             />
         </FadeIn>
     </section>

@@ -9,5 +9,7 @@
         "Configuración de redes"
     ],
     "locale": "es",
-    "order": 10
+    "order": 10,
+    "contractType": "type.fulltime",
+    "workMode": "mode.onsite"
 }

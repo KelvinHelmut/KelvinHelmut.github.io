@@ -1,7 +1,7 @@
 {
     "id": "evolution-2016-es",
     "company": "Evolution Soluciones Digitales",
-    "role": "Full stack developer",
+    "role": "Fullstack Developer",
     "period": "Dic 2016 — Dic 2017",
     "location": "Arequipa, PE",
     "highlights": [
@@ -21,5 +21,8 @@
         "AR"
     ],
     "locale": "es",
-    "order": 50
+    "order": 50,
+    "certificateUrl": "/documents/certificates/evolution.pdf",
+    "contractType": "type.fulltime",
+    "workMode": "mode.onsite"
 }

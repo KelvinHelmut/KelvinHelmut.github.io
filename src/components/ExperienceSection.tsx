@@ -12,6 +12,8 @@ interface Experience {
         highlights?: string[];
         technologies?: string[];
         certificateUrl?: string;
+        contractType?: string;
+        workMode?: string;
     };
 }
 
@@ -21,9 +23,10 @@ interface Props {
     seeMoreLabel: string;
     seeLessLabel: string;
     certificateLabel: string;
+    translations: Record<string, string>;
 }
 
-export default function ExperienceSection({ items, initialCount = 3, seeMoreLabel, seeLessLabel, certificateLabel }: Props) {
+export default function ExperienceSection({ items, initialCount = 3, seeMoreLabel, seeLessLabel, certificateLabel, translations }: Props) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const displayedItems = isExpanded ? items : items.slice(0, initialCount);
@@ -43,10 +46,38 @@ export default function ExperienceSection({ items, initialCount = 3, seeMoreLabe
                             className="relative pl-8 pb-12 border-l border-zinc-100 dark:border-zinc-800 last:border-0 last:pb-0 overflow-hidden"
                         >
                             <div className="absolute left-[-5px] top-1 w-[9px] h-[9px] rounded-full bg-zinc-200 dark:bg-zinc-700 border-2 border-white dark:border-[#0a0a0a]" />
-                            <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
-                                <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100">
-                                    {exp.data.role}
-                                </h3>
+                            <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
+                                <div className="flex flex-col md:flex-row md:items-center gap-2">
+                                    <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100">
+                                        {exp.data.role}
+                                    </h3>
+                                    {(exp.data.contractType || exp.data.workMode) && (
+                                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1 md:mb-0">
+                                            {exp.data.contractType && (
+                                                <div className="flex items-center gap-1.5">
+                                                    <div className={`w-1.5 h-1.5 rounded-full ${exp.data.contractType === 'type.fulltime' ? 'bg-blue-500/60' :
+                                                        exp.data.contractType === 'type.freelance' ? 'bg-violet-500/60' :
+                                                            'bg-amber-500/60'
+                                                        }`} />
+                                                    <span className="text-[9px] font-medium text-zinc-500 dark:text-zinc-500 uppercase tracking-widest">
+                                                        {translations[exp.data.contractType] || exp.data.contractType}
+                                                    </span>
+                                                </div>
+                                            )}
+                                            {exp.data.workMode && (
+                                                <div className="flex items-center gap-1.5">
+                                                    <div className={`w-1.5 h-1.5 rounded-full ${exp.data.workMode === 'mode.remote' ? 'bg-emerald-500/60' :
+                                                        exp.data.workMode === 'mode.hybrid' ? 'bg-indigo-500/60' :
+                                                            'bg-zinc-400/60'
+                                                        }`} />
+                                                    <span className="text-[9px] font-medium text-zinc-500 dark:text-zinc-500 uppercase tracking-widest">
+                                                        {translations[exp.data.workMode] || exp.data.workMode}
+                                                    </span>
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
+                                </div>
                                 <div className="flex items-center gap-3">
                                     {exp.data.certificateUrl && (
                                         <a

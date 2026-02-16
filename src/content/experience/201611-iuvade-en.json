@@ -1,12 +1,12 @@
 {
     "id": "iuvade-2015-en",
     "company": "IUVADE",
-    "role": "Full stack developer",
+    "role": "Fullstack Developer",
     "period": "Feb 2015 — Nov 2016",
     "location": "Arequipa, PE",
     "highlights": [
         "Implementation of new modules in government management and business management systems",
-        "Programming of views, triggers and functions (PlPgSql)"
+        "Programming of views, triggers, and functions (PlPgSql)"
     ],
     "technologies": [
         "PHP",
@@ -15,5 +15,7 @@
         "Ubuntu Server"
     ],
     "locale": "en",
-    "order": 40
+    "order": 40,
+    "contractType": "type.contract",
+    "workMode": "mode.onsite"
 }

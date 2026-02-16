@@ -1,7 +1,7 @@
 {
     "id": "chocano-es",
     "company": "Constructora Cesar Chocano",
-    "role": "Freelance Developer",
+    "role": "Fullstack Developer & DevOps",
     "period": "Dic 2019 — May 2020",
     "location": "Arequipa, PE",
     "highlights": [
@@ -20,5 +20,7 @@
         "Debian"
     ],
     "locale": "es",
-    "order": 80
+    "order": 80,
+    "contractType": "type.freelance",
+    "workMode": "mode.hybrid"
 }

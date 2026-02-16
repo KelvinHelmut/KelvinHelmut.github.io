@@ -8,6 +8,7 @@ import EducationItem from "../../components/EducationItem.astro";
 import CourseItem from "../../components/CourseItem.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { useTranslations } from "../../i18n/utils";
+import { ui } from "../../i18n/ui";
 import { Mail, Phone, Github, Linkedin, MapPin, Globe } from "lucide-react";
 
 const t = useTranslations("en");
@@ -148,6 +149,7 @@ const courses: CollectionEntry<"courses">[] = (
                 seeMoreLabel={t("button.seeMore")}
                 seeLessLabel={t("button.seeLess")}
                 certificateLabel={t("button.certificate")}
+                translations={ui["en"]}
             />
         </FadeIn>
     </section>

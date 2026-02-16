@@ -1,7 +1,7 @@
 {
     "id": "iuvade-2018-es",
     "company": "IUVADE",
-    "role": "Full stack developer",
+    "role": "Fullstack Developer",
     "period": "Jul 2018 — Dic 2019",
     "location": "Arequipa, PE",
     "highlights": [
@@ -19,5 +19,7 @@
         "Apache"
     ],
     "locale": "es",
-    "order": 60
+    "order": 60,
+    "contractType": "type.contract",
+    "workMode": "mode.onsite"
 }

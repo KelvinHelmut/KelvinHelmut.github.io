@@ -12,5 +12,7 @@
         "MySql"
     ],
     "locale": "es",
-    "order": 30
+    "order": 30,
+    "contractType": "type.contract",
+    "workMode": "mode.onsite"
 }

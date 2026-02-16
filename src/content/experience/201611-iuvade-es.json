@@ -1,7 +1,7 @@
 {
     "id": "iuvade-2015-es",
     "company": "IUVADE",
-    "role": "Full stack developer",
+    "role": "Fullstack Developer",
     "period": "Feb 2015 — Nov 2016",
     "location": "Arequipa, PE",
     "highlights": [
@@ -15,5 +15,7 @@
         "Ubuntu Server"
     ],
     "locale": "es",
-    "order": 40
+    "order": 40,
+    "contractType": "type.contract",
+    "workMode": "mode.onsite"
 }

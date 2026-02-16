@@ -5,12 +5,14 @@
     "period": "Sep 2014 — Nov 2014",
     "location": "Arequipa, PE",
     "highlights": [
-        "Add and correct functionalities in different modules of business control system"
+        "Add and fix functionalities in different modules of the business control system"
     ],
     "technologies": [
         "PHP",
         "MySql"
     ],
     "locale": "en",
-    "order": 30
+    "order": 30,
+    "contractType": "type.contract",
+    "workMode": "mode.onsite"
 }

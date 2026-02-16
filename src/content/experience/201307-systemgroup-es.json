@@ -1,12 +1,12 @@
 {
-    "id": "systemgroup-es",
-    "company": "SystemGroup, Óptica Hispana",
-    "role": "Freelance Developer",
+    "id": "freelance-2013-es",
+    "company": "Proyectos Independientes",
+    "role": "Software Developer",
     "period": "Mar 2013 — Jul 2013",
     "location": "Arequipa, PE",
     "highlights": [
-        "Programación de sistema de escritorio para el control de clientes de la óptica",
-        "Implementación y configuración de tienda en línea. Capacitación para la gestión de la página"
+        "Óptica Hispana: Diseño y desarrollo de sistema de escritorio a medida para el control y seguimiento de clientes.",
+        "System Group: Implementación, configuración y despliegue de tienda en línea sobre plataforma Prestashop."
     ],
     "technologies": [
         "Java",
@@ -16,5 +16,7 @@
         "CSS"
     ],
     "locale": "es",
-    "order": 20
+    "order": 20,
+    "contractType": "type.freelance",
+    "workMode": "mode.hybrid"
 }

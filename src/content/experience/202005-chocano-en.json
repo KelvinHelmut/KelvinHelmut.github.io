@@ -1,13 +1,13 @@
 {
     "id": "chocano-en",
     "company": "Constructora Cesar Chocano",
-    "role": "Freelance Developer",
+    "role": "Fullstack Developer & DevOps",
     "period": "Dec 2019 — May 2020",
     "location": "Arequipa, PE",
     "highlights": [
-        "Management, Design and implementation of business management system for construction",
-        "Gnu/Linux server configuration on AWS Lightsail and CI/CD Pipeline",
-        "Automatic cloud backup system configuration"
+        "Management, Design, and implementation of a business management system for construction",
+        "Configuration of Gnu/Linux server on AWS Lightsail and CI/CD Pipeline",
+        "Configuration of automatic cloud backup system"
     ],
     "technologies": [
         "Python",
@@ -20,5 +20,7 @@
         "Debian"
     ],
     "locale": "en",
-    "order": 80
+    "order": 80,
+    "contractType": "type.freelance",
+    "workMode": "mode.hybrid"
 }
