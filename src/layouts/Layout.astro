@@ -100,9 +100,45 @@ const fullTitle = `${title} | Kelvin Helmut`;
             >
                 <a
                     href={lang === "es" ? "/" : "/en"}
-                    class="text-xl font-bold tracking-tight"
-                    aria-label={t("nav.home")}>KH</a
+                    class="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                    aria-label={t("nav.home")}
                 >
+                    <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-8 h-8 md:w-9 md:h-9"
+                    >
+                        <path
+                            d="M6 9V23"
+                            stroke="#10b981"
+                            stroke-width="3"
+                            stroke-linecap="round"></path>
+                        <path
+                            d="M14 11L9 16L14 21"
+                            stroke="#10b981"
+                            stroke-width="3"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path
+                            d="M21 9C20 9 19 10 19 11V14C19 15 18 16 17 16C18 16 19 17 19 18V21C19 22 20 23 21 23"
+                            stroke="#52525b"
+                            stroke-width="2.5"
+                            stroke-linecap="round"></path>
+                        <path
+                            d="M23 16H25"
+                            stroke="#71717a"
+                            stroke-width="2.5"
+                            stroke-linecap="round"></path>
+                        <path
+                            d="M27 9C28 9 29 10 29 11V14C28 15 30 16 31 16C30 16 29 17 29 18V21C29 22 28 23 27 23"
+                            stroke="#52525b"
+                            stroke-width="2.5"
+                            stroke-linecap="round"></path>
+                    </svg>
+                </a>
                 <nav class="flex gap-2 md:gap-4 items-center">
                     <slot name="nav" />
                     <div
