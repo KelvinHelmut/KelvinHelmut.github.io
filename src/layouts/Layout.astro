@@ -16,7 +16,11 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const siteUrl = "https://kelvinhelmut.github.io";
-const fullTitle = `${title} | Kelvin Helmut`;
+const role = t("hero.title");
+const name = "Kelvin Helmut";
+const isHome =
+    title.toLowerCase() === "portafolio" || title.toLowerCase() === "portfolio";
+const fullTitle = isHome ? `${name} | ${role}` : `${title} | ${name}`;
 ---
 
 <!DOCTYPE html>
@@ -112,31 +116,33 @@ const fullTitle = `${title} | Kelvin Helmut`;
                         class="w-8 h-8 md:w-9 md:h-9"
                     >
                         <path
-                            d="M6 9V23"
+                            d="M1.75 8.0V24.0"
                             stroke="#10b981"
-                            stroke-width="3"
+                            stroke-width="3.4"
                             stroke-linecap="round"></path>
                         <path
-                            d="M14 11L9 16L14 21"
+                            d="M11.4 10.3L5.8 16L11.4 21.7"
                             stroke="#10b981"
-                            stroke-width="3"
+                            stroke-width="3.4"
                             stroke-linecap="round"
                             stroke-linejoin="round"></path>
                         <path
-                            d="M21 9C20 9 19 10 19 11V14C19 15 18 16 17 16C18 16 19 17 19 18V21C19 22 20 23 21 23"
-                            stroke="#52525b"
-                            stroke-width="2.5"
+                            d="M18.9 8.0C17.7 8.0 16.6 9.1 16.6 10.3V14.3L14.3 16L16.6 17.7V21.7C16.6 22.9 17.7 24.0 18.9 24.0"
+                            stroke="#a1a1aa"
+                            stroke-width="2.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path
+                            d="M21.1 16H23.4"
+                            stroke="#a1a1aa"
+                            stroke-width="2.8"
                             stroke-linecap="round"></path>
                         <path
-                            d="M23 16H25"
-                            stroke="#71717a"
-                            stroke-width="2.5"
-                            stroke-linecap="round"></path>
-                        <path
-                            d="M27 9C28 9 29 10 29 11V14C28 15 30 16 31 16C30 16 29 17 29 18V21C29 22 28 23 27 23"
-                            stroke="#52525b"
-                            stroke-width="2.5"
-                            stroke-linecap="round"></path>
+                            d="M25.7 8.0C26.9 8.0 28.0 9.1 28.0 10.3V14.3L30.3 16L28.0 17.7V21.7C28.0 22.9 26.9 24.0 25.7 24.0"
+                            stroke="#a1a1aa"
+                            stroke-width="2.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path>
                     </svg>
                 </a>
                 <nav class="flex gap-2 md:gap-4 items-center">
