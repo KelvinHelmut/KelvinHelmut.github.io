@@ -77,20 +77,13 @@ const fullTitle = isHome ? `${name} | ${role}` : `${title} | ${name}`;
             rel="stylesheet"
         />
 
-        <!-- Google Analytics -->
+        <!-- Cloudflare Web Analytics -->
         <script
-            is:inline
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=UA-172160606-1"
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={'{"token": "0b78820ea5ae4fb1b619e03b3445ae49"}'}
         ></script>
-        <script is:inline>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-            gtag("config", "UA-172160606-1");
-        </script>
+        <!-- End Cloudflare Web Analytics -->
     </head>
     <body
         class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 selection:bg-emerald-100 dark:selection:bg-emerald-900/30 overflow-x-hidden min-h-screen"
