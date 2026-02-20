@@ -15,45 +15,18 @@ import profileImage from "../assets/profile.png";
 import { Mail, Phone, Github, Linkedin, MapPin } from "lucide-react";
 
 const t = useTranslations("es");
-const experience: CollectionEntry<"experience">[] = (
-    await getCollection(
-        "experience",
-        ({ data }: CollectionEntry<"experience">) => data.locale === "es"
-    )
-).sort(
-    (a: CollectionEntry<"experience">, b: CollectionEntry<"experience">) =>
-        (b.data.order || 0) - (a.data.order || 0)
-);
-
-const projects: CollectionEntry<"projects">[] = (
-    await getCollection(
-        "projects",
-        ({ data }: CollectionEntry<"projects">) => data.locale === "es"
-    )
-).sort(
-    (a: CollectionEntry<"projects">, b: CollectionEntry<"projects">) =>
-        (b.data.order || 0) - (a.data.order || 0)
-);
-
-const education: CollectionEntry<"education">[] = (
-    await getCollection(
-        "education",
-        ({ data }: CollectionEntry<"education">) => data.locale === "es"
-    )
-).sort(
-    (a: CollectionEntry<"education">, b: CollectionEntry<"education">) =>
-        (b.data.order || 0) - (a.data.order || 0)
-);
-
-const courses: CollectionEntry<"courses">[] = (
-    await getCollection(
-        "courses",
-        ({ data }: CollectionEntry<"courses">) => data.locale === "es"
-    )
-).sort(
-    (a: CollectionEntry<"courses">, b: CollectionEntry<"courses">) =>
-        (b.data.order || 0) - (a.data.order || 0)
-);
+const experience = (
+    await getCollection("experience", (e: any) => e.data.locale === "es")
+).sort((a: any, b: any) => (b.data.order || 0) - (a.data.order || 0)) as any;
+const projects = (
+    await getCollection("projects", (e: any) => e.data.locale === "es")
+).sort((a: any, b: any) => (b.data.order || 0) - (a.data.order || 0)) as any;
+const education = (
+    await getCollection("education", (e: any) => e.data.locale === "es")
+).sort((a: any, b: any) => (b.data.order || 0) - (a.data.order || 0)) as any;
+const courses = (
+    await getCollection("courses", (e: any) => e.data.locale === "es")
+).sort((a: any, b: any) => (b.data.order || 0) - (a.data.order || 0)) as any;
 ---
 
 <Layout title="Portafolio" description={t("hero.subtitle")}>
@@ -168,14 +141,14 @@ const courses: CollectionEntry<"courses">[] = (
     </section>
 
     <section id="experience" class="mb-32">
-        <FadeIn client:load delay={0.2}>
+        <FadeIn client:visible delay={0.2}>
             <h2
                 class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 mb-12 border-b border-zinc-100 dark:border-zinc-800 pb-4"
             >
                 {t("section.experience")}
             </h2>
             <ExperienceSection
-                client:load
+                client:visible
                 items={experience}
                 seeMoreLabel={t("button.seeMore")}
                 seeLessLabel={t("button.seeLess")}
@@ -186,7 +159,7 @@ const courses: CollectionEntry<"courses">[] = (
     </section>
 
     <section id="projects" class="mb-32">
-        <FadeIn client:load delay={0.3}>
+        <FadeIn client:visible delay={0.3}>
             <h2
                 class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 mb-12 border-b border-zinc-100 dark:border-zinc-800 pb-4"
             >
@@ -201,7 +174,7 @@ const courses: CollectionEntry<"courses">[] = (
                     )
                 }
                 {
-                    projects.map((project) => (
+                    projects.map((project: any) => (
                         <ProjectCard
                             title={project.data.title}
                             description={project.data.description}
@@ -219,7 +192,7 @@ const courses: CollectionEntry<"courses">[] = (
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
         <section id="education">
-            <FadeIn client:load delay={0.4}>
+            <FadeIn client:visible delay={0.4}>
                 <h2
                     class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 mb-12 border-b border-zinc-100 dark:border-zinc-800 pb-4"
                 >
@@ -227,7 +200,7 @@ const courses: CollectionEntry<"courses">[] = (
                 </h2>
                 <div class="space-y-8">
                     {
-                        education.map((edu) => (
+                        education.map((edu: any) => (
                             <EducationItem
                                 institution={edu.data.institution}
                                 degree={edu.data.degree}
@@ -243,7 +216,7 @@ const courses: CollectionEntry<"courses">[] = (
         </section>
 
         <section id="courses">
-            <FadeIn client:load delay={0.5}>
+            <FadeIn client:visible delay={0.5}>
                 <h2
                     class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 mb-12 border-b border-zinc-100 dark:border-zinc-800 pb-4"
                 >
@@ -251,7 +224,7 @@ const courses: CollectionEntry<"courses">[] = (
                 </h2>
                 <div class="space-y-2">
                     {
-                        courses.map((course) => (
+                        courses.map((course: any) => (
                             <CourseItem
                                 title={course.data.title}
                                 platform={course.data.platform}

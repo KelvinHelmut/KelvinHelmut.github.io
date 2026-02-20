@@ -34,7 +34,17 @@ const fullTitle = isHome ? `${name} | ${role}` : `${title} | ${name}`;
         <!-- SEO Primary Meta Tags -->
         <title>{fullTitle}</title>
         <meta name="title" content={fullTitle} />
-        <meta name="description" content={description} />
+        <meta name="description" content={description || t("hero.subtitle")} />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="#ffffff"
+        />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#09090b"
+        />
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website" />
@@ -49,6 +59,15 @@ const fullTitle = isHome ? `${name} | ${role}` : `${title} | ${name}`;
         <meta property="twitter:title" content={fullTitle} />
         <meta property="twitter:description" content={description} />
         <meta property="twitter:image" content={new URL(image, siteUrl)} />
+
+        <link rel="canonical" href={new URL(Astro.url.pathname, siteUrl)} />
+        <link rel="alternate" hreflang="es" href={new URL("/", siteUrl)} />
+        <link rel="alternate" hreflang="en" href={new URL("/en/", siteUrl)} />
+        <link
+            rel="alternate"
+            hreflang="x-default"
+            href={new URL("/", siteUrl)}
+        />
 
         <script is:inline>
             const theme = (() => {
@@ -75,7 +94,15 @@ const fullTitle = isHome ? `${name} | ${role}` : `${title} | ${name}`;
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
             rel="stylesheet"
+            media="print"
+            onload="this.media='all'"
         />
+        <noscript>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+                rel="stylesheet"
+            />
+        </noscript>
 
         <!-- Cloudflare Web Analytics -->
         <script
@@ -101,6 +128,7 @@ const fullTitle = isHome ? `${name} | ${role}` : `${title} | ${name}`;
                     aria-label={t("nav.home")}
                 >
                     <svg
+                        aria-hidden="true"
                         width="32"
                         height="32"
                         viewBox="0 0 32 32"

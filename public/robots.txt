@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kelvinhelmut.github.io/sitemap-index.xml
