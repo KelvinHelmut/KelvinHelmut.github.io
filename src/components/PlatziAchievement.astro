@@ -32,11 +32,11 @@ const { title, subtitle, link, badge } = Astro.props;
                 >
                     {title.split(" ")[0]}
                 </span>
-                <h4
-                    class="text-sm font-bold text-zinc-600 dark:text-zinc-400 tracking-tight leading-tight group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors"
+                <h3
+                    class="text-sm font-bold text-zinc-700 dark:text-zinc-300 tracking-tight leading-tight group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors"
                 >
                     {title.split(" ").slice(1).join(" ")}
-                </h4>
+                </h3>
             </div>
         </div>
 
@@ -73,7 +73,7 @@ const { title, subtitle, link, badge } = Astro.props;
     </div>
 
     <p
-        class="text-[11px] text-zinc-500 dark:text-zinc-500 font-medium leading-relaxed opacity-70 group-hover:opacity-100 transition-all"
+        class="text-[11px] text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed opacity-80 group-hover:opacity-100 transition-all"
     >
         {subtitle}
     </p>

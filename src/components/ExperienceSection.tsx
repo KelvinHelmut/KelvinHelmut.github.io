@@ -148,7 +148,7 @@ export default function ExperienceSection({ items, initialCount = 3, seeMoreLabe
                 <div className="flex justify-center mt-8">
                     <button
                         onClick={() => setIsExpanded(!isExpanded)}
-                        className="flex items-center gap-2 px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors border border-zinc-100 dark:border-zinc-800 rounded-full hover:border-zinc-200 dark:hover:border-zinc-700 bg-white dark:bg-zinc-900 shadow-sm"
+                        className="flex items-center gap-2 px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors border border-zinc-100 dark:border-zinc-800 rounded-full hover:border-zinc-200 dark:hover:border-zinc-700 bg-white dark:bg-zinc-900 shadow-sm"
                     >
                         {isExpanded ? (
                             <>
