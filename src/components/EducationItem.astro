@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 import { ExternalLink } from "lucide-react";
 import CertificateModal from "./CertificateModal";
 
@@ -8,7 +9,7 @@ interface Props {
     degree: string;
     period: string;
     highlights?: string[];
-    image?: any;
+    image?: ImageMetadata;
     certificateUrl?: string;
 }
 
@@ -29,6 +30,7 @@ const { institution, degree, period, highlights, image, certificateUrl } =
                     <a
                         href={certificateUrl}
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="text-zinc-300 dark:text-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
                         title="Ver documento original"
                         aria-label={`Ver documento original de ${degree}`}
@@ -51,13 +53,14 @@ const { institution, degree, period, highlights, image, certificateUrl } =
         image && (
             <div class="relative mt-4 mb-6 overflow-hidden rounded-xl border border-zinc-100 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50">
                 <CertificateModal
-                    client:load
+                    client:visible
                     src={image.src}
                     alt={`${degree} certificate`}
                 >
                     <Image
                         src={image}
                         alt={`${degree} certificate`}
+                        loading="lazy"
                         class="w-full h-auto object-cover grayscale brightness-90 group-hover/edu:grayscale-0 group-hover/edu:brightness-100 transition-all duration-700 ease-in-out hover:scale-[1.02]"
                     />
                 </CertificateModal>

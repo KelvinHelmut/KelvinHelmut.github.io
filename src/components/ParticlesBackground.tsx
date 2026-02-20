@@ -5,6 +5,9 @@ export default function ParticlesBackground() {
     const mousePos = useRef({ x: -1000, y: -1000 });
 
     useEffect(() => {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) return;
+
         const canvasEl = canvasRef.current;
         if (!canvasEl) return;
         const canvas = canvasEl;
@@ -168,8 +171,12 @@ export default function ParticlesBackground() {
             animationFrameId = requestAnimationFrame(animate);
         };
 
+        let mouseTimeout: ReturnType<typeof setTimeout>;
         const handleMouseMove = (e: MouseEvent) => {
-            mousePos.current = { x: e.clientX, y: e.clientY };
+            if (mouseTimeout) clearTimeout(mouseTimeout);
+            mouseTimeout = setTimeout(() => {
+                mousePos.current = { x: e.clientX, y: e.clientY };
+            }, 10);
         };
 
         const handleMouseLeave = () => {

@@ -1,5 +1,6 @@
 ---
 import { Award, ExternalLink } from "lucide-react";
+import type { ImageMetadata } from "astro";
 import CertificateModal from "./CertificateModal";
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
     platform: string;
     date: string;
     link?: string;
-    image?: any;
+    image?: ImageMetadata;
 }
 
 const { title, platform, date, link, image } = Astro.props;
@@ -32,6 +33,7 @@ const { title, platform, date, link, image } = Astro.props;
                     <a
                         href={link}
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="text-zinc-300 dark:text-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
                         title="Ver credencial original"
                         aria-label={`Ver credencial original de ${title}`}
@@ -43,7 +45,7 @@ const { title, platform, date, link, image } = Astro.props;
             {
                 image && (
                     <CertificateModal
-                        client:load
+                        client:visible
                         src={image.src}
                         alt={`${title} certificate`}
                         triggerType="icon"
