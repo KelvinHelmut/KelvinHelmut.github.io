@@ -1,10 +1,15 @@
 {
     "title": "Devitai",
-    "description": "Corporate landing page for software development and artificial intelligence services. Focused on simplicity and direct client communication.",
+    "description": "High-performance landing page built with Astro. Features a custom dual-language system, seamless theme animations via View Transitions API, and lead automation using n8n.",
+    "image": "../../assets/projects/devitai.png",
     "tags": [
-        "Svelte",
-        "Web Design",
-        "Branding"
+        "Astro",
+        "Tailwind CSS",
+        "View Transitions",
+        "n8n",
+        "Cloudflare",
+        "Agentic Code",
+        "Agent Skills"
     ],
     "link": "https://devitai.com/",
     "featured": true,

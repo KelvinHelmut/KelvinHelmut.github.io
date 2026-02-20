@@ -1,6 +1,7 @@
 {
     "title": "Portfolio Personal",
     "description": "Sitio web personal diseñado con un enfoque en alto rendimiento y estética premium. Desarrollado utilizando flujos de trabajo de ingeniería asistida por IA (Agentes Autónomos y Agentic Coding).",
+    "image": "../../assets/projects/portfolio.png",
     "tags": [
         "Astro 5",
         "React 19",

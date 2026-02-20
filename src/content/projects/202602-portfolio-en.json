@@ -1,6 +1,7 @@
 {
     "title": "Personal Portfolio",
     "description": "Personal website designed with a focus on high performance and premium aesthetics. Developed using AI-assisted engineering workflows (Autonomous Agents and Agentic Coding).",
+    "image": "../../assets/projects/portfolio.png",
     "tags": [
         "Astro 5",
         "React 19",
