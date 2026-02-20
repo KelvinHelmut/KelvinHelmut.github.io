@@ -42,6 +42,9 @@ export const ui = {
         'mode.remote': 'Remote',
         'mode.hybrid': 'Hybrid',
         'mode.onsite': 'On-site',
+        '404.title': 'Page Not Found',
+        '404.description': 'Oops! The page you are looking for does not exist or has been moved.',
+        '404.back': 'Go Back Home',
     },
     es: {
         'nav.home': 'Inicio',
@@ -79,5 +82,8 @@ export const ui = {
         'mode.remote': 'Remoto',
         'mode.hybrid': 'Híbrido',
         'mode.onsite': 'Presencial',
+        '404.title': 'Página no encontrada',
+        '404.description': '¡Ups! La página que buscas no existe o ha sido movida.',
+        '404.back': 'Volver al inicio',
     },
 } as const;
