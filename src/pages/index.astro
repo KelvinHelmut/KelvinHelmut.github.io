@@ -7,26 +7,20 @@ import CourseItem from "../components/CourseItem.astro";
 import PlatziAchievement from "../components/PlatziAchievement.astro";
 import ScrollToTop from "../components/ScrollToTop";
 import ExperienceSection from "../components/ExperienceSection";
-import { getCollection, type CollectionEntry } from "astro:content";
+import {} from "astro:content";
 import { useTranslations } from "../i18n/utils";
 import { ui } from "../i18n/ui";
 import { Image } from "astro:assets";
 import profileImage from "../assets/profile.png";
 import { Mail, Phone, Github, Linkedin, MapPin } from "lucide-react";
 
+import { getSortedCollection } from "../i18n/utils";
+
 const t = useTranslations("es");
-const experience = (
-    await getCollection("experience", (e: any) => e.data.locale === "es")
-).sort((a: any, b: any) => (b.data.order || 0) - (a.data.order || 0)) as any;
-const projects = (
-    await getCollection("projects", (e: any) => e.data.locale === "es")
-).sort((a: any, b: any) => (b.data.order || 0) - (a.data.order || 0)) as any;
-const education = (
-    await getCollection("education", (e: any) => e.data.locale === "es")
-).sort((a: any, b: any) => (b.data.order || 0) - (a.data.order || 0)) as any;
-const courses = (
-    await getCollection("courses", (e: any) => e.data.locale === "es")
-).sort((a: any, b: any) => (b.data.order || 0) - (a.data.order || 0)) as any;
+const experience = (await getSortedCollection("experience", "es")) as any;
+const projects = (await getSortedCollection("projects", "es")) as any;
+const education = (await getSortedCollection("education", "es")) as any;
+const courses = (await getSortedCollection("courses", "es")) as any;
 ---
 
 <Layout title="Portafolio" description={t("hero.subtitle")}>
