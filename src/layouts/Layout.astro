@@ -199,9 +199,11 @@ const fullTitle = isHome ? `${name} | ${role}` : `${title} | ${name}`;
                 class="mt-20 py-12 border-t border-zinc-100 dark:border-zinc-900"
             >
                 <div
-                    class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8"
+                    class="flex flex-col md:flex-row justify-between items-center gap-8 mb-8"
                 >
-                    <div class="flex flex-col gap-1">
+                    <div
+                        class="flex flex-col items-center md:items-start gap-1 text-center md:text-left"
+                    >
                         <span
                             class="text-sm font-bold text-zinc-900 dark:text-zinc-100 italic text-balance leading-tight"
                             >{t("footer.name")}</span
@@ -212,7 +214,9 @@ const fullTitle = isHome ? `${name} | ${role}` : `${title} | ${name}`;
                         >
                     </div>
 
-                    <div class="flex flex-col md:items-end gap-1">
+                    <div
+                        class="flex flex-col items-center md:items-end gap-3 md:gap-1"
+                    >
                         <div class="flex gap-6 leading-none">
                             <a
                                 href="https://github.com/KelvinHelmut"
